@@ -288,7 +288,7 @@ export function generateWhatsAppOrderMessage(order: OrderPayload): string {
     `• Mobile: ${phoneDisplay}`,
     `• City: ${effectiveCity}`,
     `• Complete Address: ${order.address.trim()}`,
-    order.instructions?.trim() ? `• Delivery Instructions: ${order.instructions.trim()}` : null,
+    order.instructions?.trim() ? `• Order Notes / Instructions: ${order.instructions.trim()}` : null,
     ``,
     utmLines.length > 0 ? `*TRACKING ATTRIBUTION:*\n${utmLines.join('\n')}\n` : null,
     `━━━━━━━━━━━━━━━━━━━━━━━`,
@@ -302,16 +302,15 @@ export function generateWhatsAppOrderMessage(order: OrderPayload): string {
 
 /**
  * Generates the official click-to-chat WhatsApp URL (wa.me format).
- * Ensures phone number is clean international format and never placeholder in production.
+ * Ensures phone number is clean international format and uses official business number.
  */
 export function buildWhatsAppUrl(rawSellerPhone: string, message: string): string {
   // Strip non-digits
   let cleanNumber = (rawSellerPhone || '').replace(/\D/g, '');
 
-  // If number is empty, default or still has placeholder
-  if (!cleanNumber || rawSellerPhone === 'REPLACE_WITH_MY_NUMBER') {
-    // Default valid Pakistani business number (Seller can change in settings anytime)
-    cleanNumber = '923001234567';
+  // If number is empty, default or has placeholder
+  if (!cleanNumber || rawSellerPhone === 'REPLACE_WITH_MY_NUMBER' || cleanNumber === '923001234567') {
+    cleanNumber = '923156323093';
   } else if (cleanNumber.startsWith('03')) {
     cleanNumber = '92' + cleanNumber.slice(1);
   } else if (cleanNumber.startsWith('0092')) {

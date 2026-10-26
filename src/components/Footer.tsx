@@ -78,7 +78,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenSettings, sellerPhone }) =
             
             <div className="flex items-center gap-2 mb-4">
               <a
-                href={`https://wa.me/${sellerPhone.replace(/\D/g, '') || '923001234567'}`}
+                href={`https://wa.me/${sellerPhone.replace(/\D/g, '') || '923156323093'}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#25D366] text-white text-xs font-semibold hover:bg-[#20BD5A] transition-colors"
@@ -98,7 +98,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenSettings, sellerPhone }) =
             </div>
 
             <div className="text-[11px] text-[#869B91]">
-              Support WhatsApp: <span className="font-mono text-[#DCEAE2]">{sellerPhone}</span>
+              Support WhatsApp: <span className="font-mono text-[#DCEAE2]">{sellerPhone || '+92 315 6323093'}</span>
             </div>
           </div>
 

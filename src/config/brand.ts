@@ -12,7 +12,7 @@ export const BRAND_CONFIG = {
   paymentMethod: 'Cash on Delivery (COD)',
   deliveryFeeText: 'PKR 0 (Free Cash on Delivery across Pakistan)',
   deliveryTimeline: '2–4 Business Days via TCS / Trax / Leopards',
-  defaultSellerWhatsApp: '923001234567', // Standard valid international Pakistan format
+  defaultSellerWhatsApp: '923156323093', // Official WhatsApp Business Number (+92 315 6323093)
 
   images: [
     {

@@ -155,7 +155,7 @@ export const OrderConfirmationModal: React.FC<OrderConfirmationModalProps> = ({
           <div className="text-[11px] text-[#718279] leading-relaxed">
             WhatsApp didn’t launch? You can paste the copied order text and send directly to our WhatsApp support number:
             <span className="block mt-1 font-mono font-semibold text-[#0F2E22]">
-              {sellerPhone || '+92 300 1234567'}
+              {sellerPhone || '+92 315 6323093'}
             </span>
           </div>
         </div>

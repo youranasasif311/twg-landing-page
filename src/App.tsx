@@ -19,11 +19,13 @@ export default function App() {
   const [sellerWhatsApp, setSellerWhatsApp] = useState<string>(() => {
     try {
       const saved = localStorage.getItem('twg_seller_whatsapp');
-      if (saved && saved.trim()) return saved.trim();
+      if (saved && saved.trim() && saved.trim() !== '923001234567' && saved.trim() !== 'REPLACE_WITH_MY_NUMBER') {
+        return saved.trim();
+      }
     } catch {
       // ignore
     }
-    return BRAND_CONFIG.defaultSellerWhatsApp;
+    return BRAND_CONFIG.defaultSellerWhatsApp; // '923156323093'
   });
 
   const [activeZoomIndex, setActiveZoomIndex] = useState<number | null>(null);

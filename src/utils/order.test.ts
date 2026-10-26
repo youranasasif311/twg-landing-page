@@ -128,10 +128,14 @@ test('WhatsApp message generation & wa.me URL creation', () => {
   assert.ok(message.includes('Islamabad'));
   assert.ok(message.includes('instagram'));
 
-  // Test URL generator replaces placeholder with valid number
+  // Test URL generator replaces placeholder with valid business number +923156323093
   const urlWithPlaceholder = buildWhatsAppUrl('REPLACE_WITH_MY_NUMBER', message);
   assert.ok(!urlWithPlaceholder.includes('REPLACE_WITH_MY_NUMBER'));
-  assert.ok(urlWithPlaceholder.startsWith('https://wa.me/923001234567?text='));
+  assert.ok(urlWithPlaceholder.startsWith('https://wa.me/923156323093?text='));
+
+  // Test with user's business number +923156323093
+  const urlBusiness = buildWhatsAppUrl('+923156323093', message);
+  assert.ok(urlBusiness.startsWith('https://wa.me/923156323093?text='));
 
   // Test with custom Pakistani seller number
   const urlCustom = buildWhatsAppUrl('0333 1234567', message);

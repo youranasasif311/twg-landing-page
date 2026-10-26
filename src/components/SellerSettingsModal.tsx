@@ -78,7 +78,7 @@ export const SellerSettingsModal: React.FC<SellerSettingsModalProps> = ({
             <input
               id="seller-phone-input"
               type="text"
-              placeholder="0300 1234567 or 923001234567"
+              placeholder="0315 6323093 or 923156323093"
               value={inputVal}
               onChange={(e) => {
                 setInputVal(e.target.value);
